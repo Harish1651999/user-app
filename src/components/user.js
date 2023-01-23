@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./user.module.css";
 
-const user = () => {
-  return <React.Fragment></React.Fragment>;
+const User = (props) => {
+  return <li key={props.key}>{props.name}</li>;
 };
 
-export default user;
+export default User;
