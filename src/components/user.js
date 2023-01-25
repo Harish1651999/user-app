@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import classes from "./user.module.css";
 
 class User extends Component {
