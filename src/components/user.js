@@ -1,5 +1,5 @@
-import { Component } from "react";
 import classes from "./user.module.css";
+import React, { Component } from "react";
 
 class User extends Component {
   render() {
