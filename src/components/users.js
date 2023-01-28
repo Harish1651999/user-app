@@ -9,13 +9,35 @@ const DUMMY_USERS = [
 ];
 
 class Users extends Component {
+  constructor() {
+    super();
+    this.state = {
+      ShowUsers: true,
+      more: "test",
+    };
+  }
+
+  toggleUserHandler() {
+    this.setState((curState) => {
+      return { ShowUsers: !curState.ShowUsers };
+    });
+  }
+
   render() {
+    const userslist = (
+      <ul>
+        {DUMMY_USERS.map((user) => (
+          <User key={user.id} name={user.name} />
+        ))}
+      </ul>
+    );
+
     return (
       <div className={classes.users}>
-        <button onClick={toggleUserHandler}>
-          {ShowUsers ? "Hide" : "Show"} Users
+        <button onClick={this.toggleUserHandler.bind(this)}>
+          {this.state.ShowUsers ? "Hide" : "Show"} Users
         </button>
-        {ShowUsers && userslist}
+        {this.state.ShowUsers && userslist}
       </div>
     );
   }
